@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Polly Rounded Cien';
+    src: url('PollyRounded-Thin.eot');
+    src: local('Polly Rounded Thin'), local('PollyRounded-Thin'),
+        url('PollyRounded-Thin.eot?#iefix') format('embedded-opentype'),
+        url('PollyRounded-Thin.woff2') format('woff2'),
+        url('PollyRounded-Thin.woff') format('woff'),
+        url('PollyRounded-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Rounded tres';
+    src: url('PollyRounded-Light.eot');
+    src: local('Polly Rounded Light'), local('PollyRounded-Light'),
+        url('PollyRounded-Light.eot?#iefix') format('embedded-opentype'),
+        url('PollyRounded-Light.woff2') format('woff2'),
+        url('PollyRounded-Light.woff') format('woff'),
+        url('PollyRounded-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Rounded Bold';
+    src: url('PollyRounded-Bold.eot');
+    src: local('Polly Rounded Bold'), local('PollyRounded-Bold'),
+        url('PollyRounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('PollyRounded-Bold.woff2') format('woff2'),
+        url('PollyRounded-Bold.woff') format('woff'),
+        url('PollyRounded-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Normal';
+    src: url('Polly-Bold.eot');
+    src: local('Polly Bold'), local('Polly-Bold'),
+        url('Polly-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Polly-Bold.woff2') format('woff2'),
+        url('Polly-Bold.woff') format('woff'),
+        url('Polly-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly tres';
+    src: url('Polly-light.eot');
+    src: local('Polly light'), local('Polly-light'),
+        url('Polly-light.eot?#iefix') format('embedded-opentype'),
+        url('Polly-light.woff2') format('woff2'),
+        url('Polly-light.woff') format('woff'),
+        url('Polly-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly';
+    src: url('Polly-Regular.eot');
+    src: local('Polly Regular'), local('Polly-Regular'),
+        url('Polly-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Polly-Regular.woff2') format('woff2'),
+        url('Polly-Regular.woff') format('woff'),
+        url('Polly-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Rounded Normal';
+    src: url('PollyRounded-Regular.eot');
+    src: local('Polly Rounded Regular'), local('PollyRounded-Regular'),
+        url('PollyRounded-Regular.eot?#iefix') format('embedded-opentype'),
+        url('PollyRounded-Regular.woff2') format('woff2'),
+        url('PollyRounded-Regular.woff') format('woff'),
+        url('PollyRounded-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Polly Cien';
+    src: url('Polly-Thin.eot');
+    src: local('Polly Thin'), local('Polly-Thin'),
+        url('Polly-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Polly-Thin.woff2') format('woff2'),
+        url('Polly-Thin.woff') format('woff'),
+        url('Polly-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+

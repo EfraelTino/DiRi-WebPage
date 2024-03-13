@@ -1,0 +1,474 @@
+<?php
+$title = "Home";
+
+include('page-master/head.php');
+include('page-master/header.php');
+?>
+
+<body>
+    <style>
+        #wrap {
+            background: none;
+            position: relative;
+            z-index: 8;
+        }
+
+        .pag-servicios-streaming {
+            width: 100%;
+            height: 100vh;
+            background: url(assets/backs/white_orange.webp);
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.2s;
+        }
+
+        .img-resalt {
+            width: 450px;
+            position: fixed;
+            z-index: 11;
+            right: 10%;
+            bottom: -45px;
+            transition: all 0.2s;
+        }
+
+        .page-content-services-streaming {
+            opacity: 1;
+            transition: all .25s ease .25s;
+            width: 25%;
+            height: 100%;
+            background-color: var(--colo-white);
+            transition: all 0.2s;
+        }
+
+        .sombra-page-content {
+            width: 100%;
+            height: 100%;
+            padding: 40px 10px 0px 150px;
+            box-sizing: border-box;
+            transition: all 0.2s;
+            background-color: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
+        }
+
+        .diri-int2 {
+            width: 90%;
+            transition: all 0.2s;
+        }
+
+        .titulo-int {
+            text-transform: uppercase;
+            color: var(--color-black);
+            font-weight: 800;
+            font-size: 30px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .page-content-description {
+            margin: 40px 0px 0px 0px;
+
+        }
+
+        .services-description {
+            width: 75%;
+            padding: 0px 0px 40px 80px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: flex-start;
+            transition: all 0.2s;
+        }
+
+        .wrap-services-description {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .wrap-cont {
+            width: 60%;
+            padding-top: 60px;
+        }
+
+
+
+        .titulo-serv-int {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .wrap-titu-int {
+            font-weight: bold;
+            color: black;
+            font-size: 40px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .bt-back {
+            background-color: var(--color-black);
+            width: 45px;
+            height: 45px;
+            border-radius: 7px;
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap-tabs {
+            width: 100%;
+            margin: 50px 0px 30px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .tabs-int {
+            width: 100%;
+            color: var(--color-neutro);
+            border-bottom: 1px solid #9027e0;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 8px 18px;
+            transition: all .25s ease;
+            margin: 0px 20px 0px 10px;
+            transition: all 0.2s;
+
+        }
+
+        .tabs-int:hover {
+            background-color: var(--color-light2);
+            color: black;
+        }
+
+        .tabs-int.active {
+            background: rgb(91, 25, 151);
+            background: linear-gradient(137deg, rgba(91, 25, 151, 1) 0%, rgba(157, 58, 213, 1) 51%, rgba(183, 98, 228, 1) 100%);
+            color: var(--colo-white);
+            border-radius: 4px;
+        }
+
+        .wrap-cnt {
+            position: relative;
+            display: block;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .wrap-cnt-item.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .wrap-cnt-item {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .25s ease;
+        }
+
+        .txt-description {
+            margin: 2px 0px 4px 0px;
+            width: 100%;
+            color: var(--color-black);
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .ico-fl {
+            color: var(--color-secundario);
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .bt-lo-quiero {
+            display: inline-block;
+            background: var(--color-black);
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+            border-radius: 5px;
+            margin: 40px 0px 0px 0px;
+            padding: 7px 20px 10px 20px;
+            transition: all 0.2s;
+            font-weight: 800;
+        }
+
+        .wrap-gen-serv {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* CARROUSEL */
+        .wrap-slides {
+            overflow: hidden;
+            width: 40%;
+            /* Ajusta el ancho según sea necesario */
+        }
+
+        .wra-img-serv {
+            align-items: start;
+            width: 100%;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .wra-img-serv img {
+            flex: 0 0 auto;
+            width: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .wra-img-serv img.active {
+            opacity: 1;
+        }
+    </style>
+    <main id="wrap" class="active">
+        <div class="pag-servicios-streaming">
+
+            <img class="img-resalt" src="assets/images/streaming.webp" width="100%">
+
+            <div class="page-content-services-streaming">
+                <div class="sombra-page-content">
+
+                    <div class="page-content-description">
+                        <div class="titulo-int pr">SIMULADORES</div>
+                        <div class="wrap-tabs">
+                            <a href="" class="tabs-int active" id="tab1">01. Vehículos </a>
+                            <a href="" class="tabs-int" id="tab2">02. Motos</a>
+                            <a href="" class="tabs-int" id="tab3">03. Aviones</a>
+                            <a href="" class="tabs-int" id="tab4">04. Golf</a>
+                            <a href="" class="tabs-int" id="tab5">05. Karts</a>
+                            <a href="" class="tabs-int" id="tab6">06. Skate</a>
+                            <a href="" class="tabs-int" id="tab7">07. Tren</a>
+                            <a href="" class="tabs-int" id="tab8">08. Camión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="services-description">
+                <div class="wrap-services-description">
+                    <div class="wrap-cont">
+                        <div class="titulo-serv-int">
+                            <div data-id="tab1" class="wrap-titu-int wrap-cnt-item active">Simulador de<br>Vehículos</div>
+
+                            <div data-id="tab2" class="wrap-titu-int wrap-cnt-item ">Motos</div>
+                            <div data-id="tab3" class="wrap-titu-int wrap-cnt-item ">Aviones</div>
+                            <div data-id="tab4" class="wrap-titu-int wrap-cnt-item ">Golf</div>
+                            <div data-id="tab5" class="wrap-titu-int wrap-cnt-item ">Karts</div>
+                            <div data-id="tab6" class="wrap-titu-int wrap-cnt-item ">Skate</div>
+                            <div data-id="tab7" class="wrap-titu-int wrap-cnt-item ">Tren</div>
+                            <div data-id="tab8" class="wrap-titu-int wrap-cnt-item ">Camión</div>
+                            <a href="servicios" class="icon-arrow-left bt-back spa"></a>
+
+                        </div>
+
+
+                        <div class="wrap-cnt">
+                            <div class="wrap-cnt-item active" data-id="tab1">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab2">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab3">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab4">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab5">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab6">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab7">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-cnt-item" data-id="tab8">
+                                <div class="wrap-desc-ser">
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                    <div class="txt-description">
+                                        <span class="icon-arrow-right ico-fl"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, doloremque.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=51994189894&amp;text=Hola,%20quisiera%20informaci%C3%B3n%20" target="_blank" class="bt-lo-quiero">COTIZAR SERVICIOS</a>
+                    </div>
+
+                    <div class="wrap-slides">
+                        <div class="wra-img-serv">
+                            <img src="./assets/images/simulacion1.webp" alt="SIMULADOR IMAGE" class="active">
+                            <img src="./assets/images/simulacion2.webp" alt="SIMULADOR IMAGE">
+                            <img src="./assets/images/simulacion3.webp" alt="SIMULADOR IMAGE">
+                        </div>
+                    </div>
+                </div>
+
+
+              
+            </div>
+
+
+            <!-- <div class="img-apoyo1"></div> -->
+        </div>
+    </main>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('body').on('click', '.tabs-int', function(e) {
+                e.preventDefault()
+                var id = $(this).attr('id')
+                console.log(id, 'fnfnc')
+                $('.tabs-int').removeClass('active')
+                $(this).addClass('active')
+                $('.wrap-cnt-item').removeClass('active')
+                $('.wrap-cnt-item[data-id="' + id + '"]').addClass('active')
+
+            })
+
+            $('body').on('click', '.bg-link', function(e) {
+                e.preventDefault();
+                let bg = $(this).attr('data-bg')
+                $('.festa-bg').css('background-image', 'url("' + bg + '")');
+                $('.bg-link').removeClass('active')
+                $(this).addClass('active')
+            })
+        })
+        $(document).ready(function() {
+        var $carouselContainer = $('.wra-img-serv');
+        var $images = $carouselContainer.find('img');
+        var imageWidth = $images.first().width();
+
+        var animationInterval = setInterval(function() {
+            var $activeImage = $carouselContainer.find('.active');
+            var nextIndex = ($activeImage.index() + 1) % $images.length;
+
+            $activeImage.fadeOut(500, function() {
+                $(this).removeClass('active');
+                $images.eq(nextIndex).fadeIn(500).addClass('active');
+            });
+
+        }, 3000);
+
+        $carouselContainer.on('mouseenter', function() {
+            clearInterval(animationInterval);
+        });
+
+        $carouselContainer.on('mouseleave', function() {
+            animationInterval = setInterval(function() {
+                var $activeImage = $carouselContainer.find('.active');
+                var nextIndex = ($activeImage.index() + 1) % $images.length;
+
+                $activeImage.fadeOut(500, function() {
+                    $(this).removeClass('active');
+                    $images.eq(nextIndex).fadeIn(500).addClass('active');
+                });
+
+            }, 3000);
+        });
+    });
+
+    </script>
+
+    <?php
+    // include('page-master/services.php');
+    ?>
+    <?php
+    // include "page-master/footer.php";
+    include('page-master/js.php');
+    ?>

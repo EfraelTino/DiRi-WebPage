@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style>
+      * {
+        margin: 0;
+        line-height: 1.5;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      main {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      main > section {
+        height: 100vh;
+        display: flex;
+        background: #eee;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      main > section:nth-child(odd) {
+        background: #ddd;
+      }
+
+      main > section > div {
+        margin: auto;
+        text-align: center;
+      }
+
+      html,
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <main>
+      <section>
+        <div>
+          <h1>Section 1</h1>
+          <p>Lorem ipsum howdy</p>
+        </div>
+      </section>
+      <section id="section-2">
+        <div>
+          <h2>Section 2</h2>
+          <p>Lorem ipsum howdy</p>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Section 3</h2>
+          <p>Lorem ipsum howdy</p>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Section 4</h2>
+          <p>Lorem ipsum howdy</p>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Section 5</h2>
+          <p>Lorem ipsum howdy</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

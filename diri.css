@@ -1,0 +1,811 @@
+:root {
+	--swiper-theme-color: #FF6600 !important;
+	--swiper-navigation-color: #FF6600 !important;
+	--swiper-pagination-color: #FF6600 !important;
+	--color-primario: #4C1680;
+	--color-secundario: #FF6600;
+	--color-light1: #256ED9;
+	--color-light2: #9f39ff90;
+	--color-light3: #256dd988;
+	--color-light4: #ff660084;
+	--color-white: #ffffff;
+
+	--swiper-theme-color: #FF6600 !important;
+	--swiper-navigation-color: #FF6600 !important;
+	--swiper-pagination-color: #FF6600 !important;
+
+	--color-neutro: #494949;
+	--color-black: #000000;
+	--transition150: all 150ms;
+	--transition300: all 300ms;
+	--transition4: all .25s ease;
+	--shadow-general: 0px 10px 15px -9px rgba(0, 0, 0, 0.7);
+
+	--font-fm: 'Montserrat', sans-serif;
+}
+
+
+
+
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: var(--font-fm);
+	color: var(--color-white);
+}	
+@font-face {
+	font-family: 'Polly Rounded';
+	src: url('./font/PollyRounded-Regular.ttf');
+}
+@font-face {
+	font-family: 'Polly2';
+	src: url('./font/Polly-Bold.eot');
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Polly Rounded';
+}
+img {
+	width: 100%;
+	display: block;
+	margin: none;
+	transition: var(--transition150);
+	height: auto;
+}
+strong{
+	color: black;
+}
+/* body {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.2;
+	background-image: url('assets/backs/bg-above-the-fold.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+	width: 3px;
+	background-color: var(--color-primario);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--color-secundario);
+	border-radius: 20px;
+} */
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#renderCanvas {
+	width: 100%;
+	height: 100%;
+	touch-action: none;
+}
+
+#canvasZone {
+	height: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+.wrap-slides swiper-container{
+	padding-top: 0;
+}
+     /* Estilos opcionales para personalizar tu carrusel */
+	 swiper-container {
+		width: 100%;
+		height: 100%;
+	}
+	.wrap-slides swiper-container{
+		padding-top: 0;
+	}
+	swiper-slide {
+		background-position: center;
+		background-size: cover;
+		width: 300px;
+	}
+
+	swiper-slide img {
+		display: block;
+		width: 100%;
+	}
+
+	.ft-cts swiper-container {
+		width: 340px;
+		height: fit-content;
+	   
+
+	}
+.cl-normal {
+	width: 1200px;
+	margin: auto;
+	transition: var(--transition150);
+}
+
+
+/* HEADER */
+.header-fixed {
+	width: 200px;
+	height: 100vh;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 9;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	transition: all 0.2s;
+}
+
+.header-fixed::after {
+	content: "";
+	/* -webkit-backdrop-filter: blur(7px); */
+	/* backdrop-filter: blur(7px); */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 0px;
+}
+
+.wrap-header {
+	width: 200px;
+	height: 100vh;
+	padding: 40px 0px;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 9;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s;
+}
+
+.header-left {
+	/* display: flex;
+	align-items: center; */
+	transition: var(--transition150);
+}
+
+.header-left .ico-chdr {
+	color: var(--color-light1);
+}
+
+
+.diri_logo {
+	width: 140px;
+	transition: var(--transition150);
+}
+
+.ico-chdr {
+	font-size: 30px;
+	color: var(--color-secundario);
+	margin: 0px 20px;
+}
+
+.ico-menaso {
+	display: none;
+}
+
+.bt-link-header {
+	font-size: 18px;
+	color: var(--color-secundario);
+	font-weight: 400;
+	border-bottom: 2px solid var(--color-light1);
+	margin: 5px 20px 0px 0px;
+	padding: 0px 0px 4px 0px;
+	transition: var(--transition150);
+}
+
+.bt-link-header:hover {
+	color: black;
+	border-bottom: 2px solid black;
+}
+
+.services {
+	display: none;
+}
+
+.lista-servicios:hover .services {
+	display: block;
+	position: absolute;
+	width: 260px;
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+	background-color: var(--color-black);
+
+	/* background-color: var(--color-secundario); */
+	border: none;
+	box-shadow: var(--shadow-general);
+	left: 200px;
+	top: 0;
+}
+
+.lista-servicios:hover .services::after {
+	content: "";
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+	background-color: rgba(255, 255, 255, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.ico-lpa {
+	font-size: 20px;
+	color: var(--color-primario);
+	margin: 0px 0px 0px -25px;
+}
+
+.cart-header {
+	background-color: var(--color-secundario);
+	border: none;
+	gap: 4px;
+	color: white !important;
+}
+
+.cart-header span {
+
+	color: white !important;
+}
+
+.idioma {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 9px;
+}
+
+.idioma li a {
+	padding: 16px 10px;
+	border-radius: 9px
+}
+
+.btn_idiona,
+.lista_idiomas {
+	width: 100% !important;
+}
+
+.lista_idiomas {
+	border-radius: 0px 0px 7px 7px !important;
+	border-top: none !important;
+}
+
+.lista_idiomas li a span {
+	color: white;
+}
+
+.lista_idiomas li a:hover span {
+	color: black;
+}
+
+.ico-crtsh {
+	font-size: 27px;
+}
+
+.nrocart {
+	font-weight: 400;
+	font-size: 16px;
+	margin: -7px 0px 0px 3px;
+	transition: var(--transition150);
+}
+
+.ico-us {
+	width: 50px;
+	height: 50px;
+	font-size: 24px;
+	border-radius: 9px;
+	margin: 0px 0px 3px 0px;
+	color: white;
+	transition: all 0.2s;
+	background-color: var(--color-primario);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s;
+}
+
+.bt-text {
+	transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+
+/*HEADER PEGADIZO*/
+body.fixed .header-fixed {
+	color: var(--color-light1);
+	position: fixed;
+	top: 0;
+	padding: 10px 0px;
+	z-index: 2;
+	transition: var(--transition150);
+	background-color: var(--color-white);
+	backdrop-filter: blur(5px);
+}
+
+body.fixed .diri_logo {
+	width: 120px;
+	transition: var(--transition150);
+}
+
+body.fixed .ico-chdr {
+	font-size: 20px;
+	color: var(--color-light1);
+	margin: 0px 20px;
+	transition: var(--transition150);
+}
+
+/*HEADER PEGADIZO*/
+
+
+
+
+/* BUTTON SERVICIOS */
+
+.bt-services {
+
+	position: fixed;
+	z-index: 9;
+	right: 6%;
+	top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: inline-block;
+	background: var(--color-black);
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 20px 0px 20px 0px;
+	padding: 12px 25px 12px 25px;
+	transition: var(--transition300);
+	font-weight: 600;
+	-webkit-box-shadow: 5px 5px 0px 0px rgba(255, 102, 0, 1);
+	-moz-box-shadow: 5px 5px 0px 0px rgba(255, 102, 0, 1);
+	box-shadow: 5px 5px 0px 0px rgba(255, 102, 0, 1);
+}
+
+.ico-che {
+	font-size: 20px;
+	margin: 0px 0px 0px 3px;
+	transition: all 0.2s;
+	color: var(--color-black);
+}
+
+.bt-services:hover,
+.bt-services:hover .ico-che {
+	background-color: var(--color-black);
+	color: var(--color-white);
+}
+
+
+.sombra-page-content {
+	/* width: 100%; */
+	height: 100%;
+	padding: 40px 10px 0px 210px;
+	box-sizing: border-box;
+	transition: all 0.2s;
+}
+.wrap-footer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	transition: var(--transition300);
+	padding: 2rem 0rem;
+}
+
+.foot-img {
+	transition: var(--transition300);
+	width: 20%;
+}
+
+.foot-redes {
+	width: 80%;
+	transition: var(--transition300);
+	color: var(--color-primario);
+}
+
+
+.foot-redes {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	transition: var(--transition300);
+}
+
+.ft-red {
+	transition: var(--transition300);
+	display: flex;
+}
+
+.ft-red a,
+.ft-red span {
+	font-size: 16px;
+	transition: var(--transition300);
+	font-weight: 600;
+}
+
+.ft-red span {
+	color: var(--color-primario);
+	font-size: 18px;
+	margin: 0px 2px;
+	font-weight: 500;
+}
+
+.ft-red a {
+	color: var(--color-primario);
+	margin: 0px 4px;
+	display: flex;
+	align-items: center;
+}
+
+.red-2 {
+	margin-top: 1rem;
+}
+
+.bt-lo-quiero {
+	display: inline-block;
+	background: var(--color-black);
+	box-shadow: var(--shadow-general);
+	border: 2px solid var(--color-black);
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	border-radius: 5px;
+	margin: 20px 0px 20px 0px;
+	padding: 7px 20px 7px 20px;
+	transition: var(--transition300);
+	font-weight: 400;
+}
+.bt-lo-quiero:hover{
+	color: white;
+	border: 2px solid var(--color-secundario);
+	background: var(--color-secundario);
+	transform: scale(1.05);
+
+}
+.bt-lo-quiero:active{
+	color: white;
+	border: 2px solid var(--color-black);
+	background: var(--color-black);
+	transform: scale(1);
+}
+.wp-cotizar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1400px) {
+	.cl-normal {
+		width: 900px;
+		margin: auto;
+	}
+
+
+	.diri_logo {
+		width: 30px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 960px) {
+	.cl-normal {
+		width: 600px;
+		margin: auto;
+	}
+
+
+	.wrap-navint {
+		display: flex;
+		justify-content: center;
+
+		width: 100%;
+		left: 0;
+		position: absolute;
+	}
+
+	body.fixed .diri_logo {
+		width: 60px;
+		transition: var(--transition150);
+	}
+
+	body.fixed .ico-chdr {
+		font-size: inherit;
+		color: inherit;
+		margin: inherit;
+		transition: var(--transition150);
+	}
+
+
+	.ico-chdr {
+		display: none;
+	}
+
+	.bt-link-header {
+		display: none;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 650px) {
+	.cl-normal {
+		width: 85%;
+		margin: auto;
+	}
+
+	.logo-tab {
+		width: 44%;
+		margin: 6px;
+		border-radius: 6px;
+		border: 1px solid var(--color-light1);
+	}
+
+	.img-footer {
+		margin: 170px 0px 0px 0px;
+		width: 100%;
+		height: 100px;
+		background-size: 130%;
+		background-position: top;
+	}
+
+
+
+	.info-footer {
+		margin: 0px 0px 30px 0px;
+		width: 100%;
+	}
+
+	.benji-iso {
+		width: 55px;
+		margin: -50px 10px 16px 10px;
+	}
+
+.sombra-page-content{
+	padding: 40px 20px 0px 20px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 570px) {
+
+	.header-fixed {
+		width: 84%;
+		height: 99px;
+		padding: 0px 0px;
+		box-sizing: border-box;
+		border-radius: 20px 20px;
+		position: fixed;
+		bottom: 15px;
+		right: 8%;
+		left: 8%;
+		z-index: 9;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header-fixed::after {
+		border-radius: 20px;
+	}
+
+	.wrap-header {
+		width: inherit;
+		height: inherit;
+		flex-direction: row;
+		padding: 0px;
+		display: block;
+	}
+
+	.bt-text {
+		font-size: 9px;
+	}
+
+	.header-right {
+		position: fixed;
+		top: 8%;
+		left: 8%;
+	}
+
+	.idioma li a {
+		padding: 10px 16px;
+	}
+
+	.cart-header {
+		background-color: var(--color-black);
+		display: flex;
+		box-shadow: var(--shadow-general);
+		transition: var(--transition4);
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.btn_idiona .cart-header:hover {
+		transform: scale(1.1);
+
+	}
+
+	.btn_idiona .cart-header:active {
+		transform: scale(1);
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 360px) {
+
+	.cl-normal {
+		width: 92%;
+		margin: auto;
+	}
+
+	.diri_logo {
+		width: 30px;
+	}
+}
